@@ -1,145 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maria Academy | Premium Education</title>
-    <meta name="description" content="Maria Academy is a modern educational academy dedicated to developing skills and empowering students with professional training programs.">
-    <link rel="stylesheet" href="index.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>مولد المشاريع المربحة</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        select,
+        button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            background: #00c9a7;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00a98b;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #fff;
+            color: #000;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo luxury-font">Maria Academy</a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <h1>🚀 مولد المشاريع المربحة</h1>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="reveal">Maria Academy</h1>
-                    <p class="reveal">A modern educational academy dedicated to developing skills and empowering students.</p>
-                    <a href="#about" class="btn-luxury reveal">Explore Courses</a>
-                </div>
-            </div>
-        </section>
+        <p>اختر مستواك:</p>
+        <select id="budget">
+            <option value="low">بدون رأس مال</option>
+            <option value="medium">رأس مال متوسط</option>
+        </select>
 
-        <!-- About Section -->
-        <section id="about" class="about-section container">
-            <div class="about-split">
-                <div class="about-image reveal">
-                    <img src="about-image.jpg" alt="Maria Academy Learning Environment">
-                </div>
-                <div class="about-text reveal">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Premium Education</h2>
-                    <p>Maria Academy is an educational center that provides high-quality training programs designed to help students develop their skills and achieve their educational goals. We focus on excellence, innovation, and student success.</p>
-                    <br>
-                    <a href="about.html" class="btn-luxury">Learn More About Us</a>
-                </div>
-            </div>
-        </section>
+        <p>اختر مهارتك:</p>
+        <select id="skill">
+            <option value="none">بدون مهارة</option>
+            <option value="design">تصميم</option>
+            <option value="writing">كتابة</option>
+        </select>
 
-        <!-- Features Section -->
-        <section class="features-section" style="background-color: #fafafa;">
-            <div class="container">
-                <h2 class="section-title reveal">Our Excellence</h2>
-                <div class="features-grid">
-                    <div class="feature-card reveal">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Professional Education</h3>
-                        <p>Curated programs designed for modern career demands.</p>
-                    </div>
-                    <div class="feature-card reveal">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h3>Experienced Instructors</h3>
-                        <p>Learn from industry experts and passionate educators.</p>
-                    </div>
-                    <div class="feature-card reveal">
-                        <i class="fas fa-school"></i>
-                        <h3>Modern Learning Environment</h3>
-                        <p>State-of-the-art facilities designed for optimal learning.</p>
-                    </div>
-                    <div class="feature-card reveal">
-                        <i class="fas fa-user-graduate"></i>
-                        <h3>Continuous Student Support</h3>
-                        <p>We are with you every step of your educational journey.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <br>
+        <button onclick="generateIdea()">اعطيني فكرة 💡</button>
 
-        <!-- Reviews Section -->
-        <section class="reviews-section reveal">
-            <div class="container">
-                <h2 class="section-title">What Our Students Say</h2>
-                <div class="review-item">
-                    <div class="review-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="comment">"Great educational experience."</p>
-                    <p><strong>Tawfiq Alghamdi</strong></p>
-                    <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-muted);">Verified Student • Rated 5.0 / 5 based on 1 review</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div id="result" class="result" style="display:none;"></div>
+    </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo luxury-font">Maria Academy</div>
-                    <p style="opacity: 0.7;">Empowering the next generation of leaders through exceptional education and training.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> 0791 95 98 57</li>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> J9WG+GXP, Es Senia</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 Maria Academy. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    <script>
+        const ideas = [
+            {
+                budget: "low",
+                skill: "none",
+                title: "إنشاء قناة TikTok",
+                desc: "أنشئ قناة وشارك محتوى بسيط (قصص، معلومات، تحفيز)",
+                steps: "1- اختر مجال\n2- انشر يومياً\n3- اربح من الإعلانات أو التسويق"
+            },
+            {
+                budget: "low",
+                skill: "design",
+                title: "بيع تصاميم على الإنترنت",
+                desc: "صمم شعارات أو بوستات وبيعها",
+                steps: "1- استخدم Canva\n2- انشر خدماتك\n3- استقبل طلبات"
+            },
+            {
+                budget: "low",
+                skill: "writing",
+                title: "الكتابة مقابل المال",
+                desc: "اكتب مقالات أو منشورات",
+                steps: "1- سجل في مواقع العمل\n2- قدم خدماتك\n3- ابني سمعة"
+            },
+            {
+                budget: "medium",
+                skill: "none",
+                title: "بيع منتجات محلية",
+                desc: "اشتري وبيع منتجات في منطقتك",
+                steps: "1- اختار منتج\n2- سوق عبر فيسبوك\n3- سلم للزبائن"
+            }
+        ];
 
-    <script src="main.js"></script>
+        function generateIdea() {
+            const budget = document.getElementById("budget").value;
+            const skill = document.getElementById("skill").value;
+
+            const filtered = ideas.filter(i => i.budget === budget && i.skill === skill);
+
+            if (filtered.length === 0) {
+                document.getElementById("result").style.display = "block";
+                document.getElementById("result").innerHTML = "❌ لا توجد فكرة حالياً";
+                return;
+            }
+
+            const idea = filtered[Math.floor(Math.random() * filtered.length)];
+
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = `
+        <h3>${idea.title}</h3>
+        <p>${idea.desc}</p>
+        <pre>${idea.steps}</pre>
+    `;
+        }
+    </script>
+
 </body>
+
 </html>
