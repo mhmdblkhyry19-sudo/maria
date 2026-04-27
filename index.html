@@ -1,132 +1,273 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
-    <title>مولد المشاريع المربحة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>الهروي إنفو</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;700&display=swap" rel="stylesheet">
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif
+        }
+
         body {
-            font-family: Arial;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            padding: 50px;
+            background: #0f172a;
+            color: #fff
         }
 
-        .container {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        select,
-        button {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        button {
-            background: #00c9a7;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #00a98b;
-        }
-
-        .result {
-            margin-top: 20px;
-            background: #fff;
+        /* TOP BAR */
+        .top-bar {
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9, #38bdf8);
             color: #000;
-            padding: 15px;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background: #020617;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #38bdf8
+        }
+
+        nav h1 {
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: url("https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUEimqZR4YEuMxa1UJFKiNqKm2vtNPERQk9hcDIOi_Zhz8Ye02NcfGz-B8gfKdZdMT3Hjbu20th2-2F8b0I-48Y2Zw0czhq89nh4llvZUZjd2-pvY-R2tK3T-rk0Ys5_OvcrYF=w426-h240-k-no") center/cover no-repeat;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6)
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2
+        }
+
+        .hero h2 {
+            font-size: 45px
+        }
+
+        .slogan {
+            color: #38bdf8;
+            margin-top: 10px;
+            font-size: 20px
+        }
+
+        .welcome {
+            background: #1e293b;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            color: #38bdf8;
+            font-weight: bold
+        }
+
+        .btn {
+            background: #38bdf8;
+            padding: 12px 25px;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            border-radius: 8px
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 30px;
+            text-align: center
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
             border-radius: 10px;
+            border: 1px solid #334155
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 8px
+        }
+
+        .card p {
+            color: #cbd5e1;
+            font-size: 14px
+        }
+
+        /* ICONS */
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px
+        }
+
+        .icons a {
+            font-size: 30px;
+            color: #fff;
+            background: #59bdbd;
+            padding: 15px;
+            border-radius: 50%;
+            transition: .3s
+        }
+
+        .icons a:hover {
+            background: #38bdf8;
+            color: #000;
+            transform: scale(1.2)
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin-top: 20px
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            padding: 15px;
+            border-radius: 50%;
+            color: #fff
+        }
+
+        footer {
+            background: #020617;
+            padding: 20px;
+            text-align: center
         }
     </style>
+
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>🚀 مولد المشاريع المربحة</h1>
+    <div class="top-bar">🔥 مرحبا بكم في محل الهروي إنفو - أجهزة الكمبيوتر واللواحق 🔥</div>
 
-        <p>اختر مستواك:</p>
-        <select id="budget">
-            <option value="low">بدون رأس مال</option>
-            <option value="medium">رأس مال متوسط</option>
-        </select>
+    <nav>
+        <h1>🖥️ الهروي إنفو</h1>
+    </nav>
 
-        <p>اختر مهارتك:</p>
-        <select id="skill">
-            <option value="none">بدون مهارة</option>
-            <option value="design">تصميم</option>
-            <option value="writing">كتابة</option>
-        </select>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
 
-        <br>
-        <button onclick="generateIdea()">اعطيني فكرة 💡</button>
+            <div class="welcome">👋 مرحبا بكم</div>
 
-        <div id="result" class="result" style="display:none;"></div>
-    </div>
+            <h2>الهروي إنفو 🖥️</h2>
+            <p class="slogan">أفضل أجهزة الكمبيوتر ولواحقه</p>
+            <p>محل الهروي إنفو للأجهزة الإعلام الآلي الكمبيوتر</p>
 
-    <script>
-        const ideas = [
-            {
-                budget: "low",
-                skill: "none",
-                title: "إنشاء قناة TikTok",
-                desc: "أنشئ قناة وشارك محتوى بسيط (قصص، معلومات، تحفيز)",
-                steps: "1- اختر مجال\n2- انشر يومياً\n3- اربح من الإعلانات أو التسويق"
-            },
-            {
-                budget: "low",
-                skill: "design",
-                title: "بيع تصاميم على الإنترنت",
-                desc: "صمم شعارات أو بوستات وبيعها",
-                steps: "1- استخدم Canva\n2- انشر خدماتك\n3- استقبل طلبات"
-            },
-            {
-                budget: "low",
-                skill: "writing",
-                title: "الكتابة مقابل المال",
-                desc: "اكتب مقالات أو منشورات",
-                steps: "1- سجل في مواقع العمل\n2- قدم خدماتك\n3- ابني سمعة"
-            },
-            {
-                budget: "medium",
-                skill: "none",
-                title: "بيع منتجات محلية",
-                desc: "اشتري وبيع منتجات في منطقتك",
-                steps: "1- اختار منتج\n2- سوق عبر فيسبوك\n3- سلم للزبائن"
-            }
-        ];
+            <a href="https://web.facebook.com/AHMED.LHARWI.INFO/?_rdc=1&_rdr" target="_blank">
+                <button class="btn">تصفح الآن</button>
+            </a>
 
-        function generateIdea() {
-            const budget = document.getElementById("budget").value;
-            const skill = document.getElementById("skill").value;
+        </div>
+    </section>
 
-            const filtered = ideas.filter(i => i.budget === budget && i.skill === skill);
+    <!-- SERVICES -->
+    <section>
+        <h2>💻 خدماتنا</h2>
 
-            if (filtered.length === 0) {
-                document.getElementById("result").style.display = "block";
-                document.getElementById("result").innerHTML = "❌ لا توجد فكرة حالياً";
-                return;
-            }
+        <div class="cards">
+            <div class="card">
+                <h3>💻 أجهزة كمبيوتر</h3>
+                <p>أفضل أجهزة مكتبية ومحمولة</p>
+            </div>
+            <div class="card">
+                <h3>⌨️ لواحق</h3>
+                <p>كل ملحقات الكمبيوتر</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ صيانة</h3>
+                <p>إصلاح جميع الأعطال</p>
+            </div>
+            <div class="card">
+                <h3>🎮 ألعاب</h3>
+                <p>أجهزة قوية للألعاب</p>
+            </div>
+        </div>
+    </section>
 
-            const idea = filtered[Math.floor(Math.random() * filtered.length)];
+    <!-- CONTACT -->
+    <section>
+        <h2>📞 نحن في خدمتك</h2>
 
-            document.getElementById("result").style.display = "block";
-            document.getElementById("result").innerHTML = `
-        <h3>${idea.title}</h3>
-        <p>${idea.desc}</p>
-        <pre>${idea.steps}</pre>
-    `;
-        }
-    </script>
+        <div class="icons">
+
+            <a href="tel:0779065417"><i class="fas fa-phone"></i></a>
+
+            <a href="https://wa.me/213779065417" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+            <a href="https://web.facebook.com/AHMED.LHARWI.INFO/?_rdc=1&_rdr" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+
+            <a href="https://www.google.com/maps/place/%D9%85%D8%AD%D9%84+%D8%A7%D9%84%D9%87%D8%B1%D9%88%D9%8A+%D8%A7%D9%86%D9%81%D9%88"
+                target="_blank">
+                <i class="fas fa-map-marker-alt"></i></a>
+
+        </div>
+
+        <p>📍 دار الشيوخ</p>
+        <p>📞 0779 06 54 17</p>
+
+        <iframe src="https://www.google.com/maps?q=34.8957734,3.4874916&output=embed"></iframe>
+
+    </section>
+
+    <a class="whatsapp" href="https://wa.me/213779065417" target="_blank">💬</a>
+
+    <footer>
+        <p>© 2026 الهروي إنفو</p>
+    </footer>
 
 </body>
 
